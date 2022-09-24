@@ -9,9 +9,9 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { UserCard } from "../../components/UserCard";
-import { AppLayout } from "../../layouts/AppLayout";
-import { client } from "../../utils/api-client";
+import { UserCard } from "@/components/UserCard";
+import { AppLayout } from "@/layouts/AppLayout";
+import { client } from "@/utils/api-client";
 
 function Users({ userList, notFound }) {
   const router = useRouter();

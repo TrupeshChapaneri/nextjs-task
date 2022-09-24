@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { AppLayout } from "../../../layouts/AppLayout";
-import { client } from "../../../utils/api-client";
+import { AppLayout } from "@/layouts/AppLayout";
+import { client } from "@/utils/api-client";
 
 function EditUser({ singleUser }) {
   const { back } = useRouter();

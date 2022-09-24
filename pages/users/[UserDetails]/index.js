@@ -1,7 +1,7 @@
 import { Center, Heading } from "@chakra-ui/react";
-import { UserCard } from "../../../components/UserCard";
-import { AppLayout } from "../../../layouts/AppLayout";
-import { client } from "../../../utils/api-client";
+import { UserCard } from "@/components/UserCard";
+import { AppLayout } from "@/layouts/AppLayout";
+import { client } from "@/utils/api-client";
 
 function UserDetails({ notFound, singleUser }) {
   if (notFound)
