@@ -8,10 +8,20 @@ import {
   SkeletonCircle,
   SkeletonText,
 } from "@chakra-ui/react";
-import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
-function UserCard({ id, first_name, last_name, email, avatar, isLoading }) {
+function UserCard({
+  id,
+  first_name,
+  last_name,
+  email,
+  avatar,
+  isLoading,
+  editUser,
+}) {
+  const { push } = useRouter();
+
   return (
     <Box
       maxW="250px"
@@ -36,11 +46,14 @@ function UserCard({ id, first_name, last_name, email, avatar, isLoading }) {
           <Text fontWeight={600} fontSize="sm" color="gray.500" mb={4}>
             {email}
           </Text>
-          <Link href={`/`}>
-            <Button size="sm" colorScheme="teal" variant="outline">
-              View User
-            </Button>
-          </Link>{" "}
+          <Button
+            size="sm"
+            colorScheme="teal"
+            variant="outline"
+            onClick={() => push(`/users/${id}`)}
+          >
+            {editUser ? "Edit" : "View"} User
+          </Button>
         </React.Fragment>
       )}
     </Box>

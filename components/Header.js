@@ -33,7 +33,7 @@ function Header() {
             <Button
               size="sm"
               colorScheme="teal"
-              variant={route === "/users" ? "solid" : "outline"}
+              variant={route.includes("/users") ? "solid" : "outline"}
             >
               Users
             </Button>

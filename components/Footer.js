@@ -3,7 +3,12 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <Box px={4} zIndex='100' bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box
+      boxShadow="md"
+      px={4}
+      zIndex="100"
+      bg={useColorModeValue("gray.100", "gray.900")}
+    >
       <Flex
         h={16}
         alignItems="center"
@@ -15,7 +20,7 @@ function Footer() {
           <Link href={`/users`}>Users</Link>
         </Stack>
 
-        <Text>Build with next.js and chakra-ui</Text>
+        <Text>Made with Next.js By Trupesh • Hosted on Vercel</Text>
       </Flex>
     </Box>
   );
