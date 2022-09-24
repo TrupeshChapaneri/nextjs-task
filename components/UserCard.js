@@ -50,7 +50,13 @@ function UserCard({
             size="sm"
             colorScheme="teal"
             variant="outline"
-            onClick={() => push(`/users/${id}`)}
+            onClick={() => {
+              if (editUser) {
+                push(`/users/${id}/edituser`);
+                return;
+              }
+              push(`/users/${id}`);
+            }}
           >
             {editUser ? "Edit" : "View"} User
           </Button>

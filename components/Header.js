@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 
 function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { route } = useRouter();
+  const { route, back } = useRouter();
 
   return (
     <Box boxShadow="md" bg={useColorModeValue("gray.100", "gray.900")} px={4}>
@@ -38,6 +38,16 @@ function Header() {
               Users
             </Button>
           </Link>
+          {route !== "/" && route !== "/users" && (
+            <Button
+              size="sm"
+              colorScheme="teal"
+              variant="link"
+              onClick={() => back()}
+            >
+              Go Back
+            </Button>
+          )}
         </Stack>
 
         <Flex>

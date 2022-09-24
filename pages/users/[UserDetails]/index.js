@@ -1,20 +1,20 @@
 import { Center, Heading } from "@chakra-ui/react";
-import { UserCard } from "../../components/UserCard";
-import { AppLayout } from "../../layouts/AppLayout";
-import { client } from "../../utils/api-client";
+import { UserCard } from "../../../components/UserCard";
+import { AppLayout } from "../../../layouts/AppLayout";
+import { client } from "../../../utils/api-client";
 
 function UserDetails({ notFound, singleUser }) {
-  console.log(singleUser);
   if (notFound)
     return (
       <Heading as="h1" textAlign="center">
         Lol Something went worng ...
       </Heading>
     );
+
   return (
     <AppLayout>
-      <Heading as="h4" size="md" textAlign="center" mb="6"  color="gray.600">
-       Hey, This is {singleUser?.data?.first_name}
+      <Heading as="h4" size="md" textAlign="center" mb="6" color="gray.600">
+        Hey, This is {singleUser?.data?.first_name}
       </Heading>
       <Center>
         <UserCard
