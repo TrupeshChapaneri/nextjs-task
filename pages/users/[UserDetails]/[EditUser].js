@@ -7,13 +7,13 @@ import {
   Input,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { AppLayout } from "@/layouts/AppLayout";
 import { client } from "@/utils/api-client";
 
 function EditUser({ singleUser }) {
-  const { back } = useRouter();
+  // const { back } = useRouter();
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -59,9 +59,12 @@ function EditUser({ singleUser }) {
               mt="6"
               onClick={() => {
                 client(`users/${singleUser?.data.id}`, {
-                  data: { name: firstName + lastName },
+                  data: { name: firstName + " " + lastName },
                 })
-                  .then(() => back())
+                  .then(() => {
+                    alert(`Updated User: ${firstName + " " + lastName} `);
+                    // back()
+                  })
                   .catch((e) => console.log(e));
               }}
             >
